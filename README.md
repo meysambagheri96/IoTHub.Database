@@ -11,6 +11,7 @@ Term Partitioning: Term partitioning is the process of dividing the index into s
 Distributed Search: Distributed search is the process of distributing the search workload across multiple nodes or machines. This approach allows for parallel processing of the search queries and can significantly reduce the search time for large-scale search applications.
 
 
+
 ## Wildcard-Based Search Algorithms:
 
 Trie-based algorithm: This algorithm uses a trie data structure to store the indexed strings and their corresponding documents. To perform a wildcard search, the trie is traversed recursively, and all the words matching the wildcard expression are returned. The advantages of this algorithm are that it is fast, supports prefix and suffix wildcard searches, and can handle large datasets. However, it requires a significant amount of memory to store the trie, and it may not be suitable for high-dimensional data.
