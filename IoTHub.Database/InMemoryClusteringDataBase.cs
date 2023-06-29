@@ -16,13 +16,15 @@ High Performance Scalable In-Memory Data Structure
 - WildCard-Search O(1).
 */
 
-public class InMemoryClusteringDataStructure
+namespace IoTHub.Database.InMemoryClusteringDataBase;
+
+public class InMemoryClusteringDataBase
 {
     private Dictionary<string, Dictionary<string, object>> documents; // map from document ids to documents
     private Dictionary<string, Dictionary<string, HashSet<string>>> invertedIndexes; // map from field names to inverted indexes
     private Dictionary<string, BloomFilter> bloomFilters; // map from field names to bloom filters
 
-    public InMemoryClusteringDataStructure()
+    public InMemoryClusteringDataBase()
     {
         documents = new Dictionary<string, Dictionary<string, object>>();
         invertedIndexes = new Dictionary<string, Dictionary<string, HashSet<string>>>();

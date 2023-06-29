@@ -1,11 +1,13 @@
-﻿using Lucene.Net.Analysis;
-using Lucene.Net.Documents;
+﻿using Lucene.Net.Documents;
 using Lucene.Net.Index;
 using Lucene.Net.Search;
 using Lucene.Net.Store;
 using Lucene.Net.Util;
 using Directory = Lucene.Net.Store.Directory;
 
+namespace IoTHub.Database.InMemoryLuceneDictionaryDatabase;
+
+[Obsolete]
 public class InMemoryLuceneDictionaryDatabase
 {
     private readonly List<Machine> _machines = new List<Machine>();

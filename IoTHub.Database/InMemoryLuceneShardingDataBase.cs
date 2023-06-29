@@ -16,17 +16,13 @@ High Performance Scalable In-Memory Data Structure
 - WildCard-Search O(1).
 */
 
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace IoTHub.Database.InMemoryLuceneShardingDataBase;
 
-public class InMemoryLuceneShardingDataStructure
+public class InMemoryLuceneShardingDataBase
 {
     private List<Cluster> clusters;
 
-    public InMemoryLuceneShardingDataStructure(int numClusters, int numShardsPerCluster, int replicationFactor)
+    public InMemoryLuceneShardingDataBase(int numClusters, int numShardsPerCluster, int replicationFactor)
     {
         clusters = Enumerable.Range(0, numClusters).Select(i => new Cluster(numShardsPerCluster, replicationFactor)).ToList();
     }

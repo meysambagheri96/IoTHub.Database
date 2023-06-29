@@ -7,11 +7,9 @@ High Performance Scalable In-Memory Data Structure
 - WildCard-Search O(1).
 */
 
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+namespace IoTHub.Database.InMemoryScalableDatabase;
 
 public class InMemoryScalableDatabase
 {

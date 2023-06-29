@@ -5,17 +5,16 @@ High Performance Scalable In-Memory Data Structure
 */
 
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-public class InMemoryDataStructure
+namespace IoTHub.Database.InMemoryBloomFilterDataBase;
+
+public class InMemoryBloomFilterDataBase
 {
     private ConcurrentDictionary<string, ConcurrentDictionary<string, object>> table; // map from row IDs to rows
     private ConcurrentDictionary<string, ConcurrentDictionary<object, HashSet<string>>> invertedIndexes; // map from field names to inverted indexes
     private ConcurrentDictionary<string, BloomFilter> bloomFilters; // map from field names to bloom filters
 
-    public InMemoryDataStructure()
+    public InMemoryBloomFilterDataBase()
     {
         table = new ConcurrentDictionary<string, ConcurrentDictionary<string, object>>();
         invertedIndexes = new ConcurrentDictionary<string, ConcurrentDictionary<object, HashSet<string>>>();

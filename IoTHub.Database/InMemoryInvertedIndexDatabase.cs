@@ -7,6 +7,8 @@ High Performance Scalable In-Memory Data Structure
 
 using System.Collections.Concurrent;
 
+namespace IoTHub.Database.InMemoryInvertedIndexDatabase;
+
 public class InMemoryInvertedIndexDatabase
 {
     private readonly ConcurrentDictionary<string, HashSet<string>> data;

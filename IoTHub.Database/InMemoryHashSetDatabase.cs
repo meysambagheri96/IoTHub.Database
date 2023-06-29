@@ -6,10 +6,12 @@ High Performance Scalable In-Memory Data Structure
 - Term-Search O(1) 
 - WildCard-Search O(1).
 */
-using System.Collections.Concurrent;
+
 using System.Text;
 
 //Usable
+namespace IoTHub.Database.InMemoryHashSetDatabase;
+
 public class InMemoryHashSetDatabase
 {
     private Dictionary<object, HashSet<HashSet<object>>> _termIndex = new Dictionary<object, HashSet<HashSet<object>>>();

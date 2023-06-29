@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace IoTHub.Database;
 
-namespace IoTHub.Database
+public static class Program
 {
-   public static class Program
-   {
-       public static void Main()
-       {
-
-       }
-   }
+    public static void Main()
+    {
+        for (int i = 0; i < 150_000_000; i++)
+        {
+               
+        }
+    }
 }

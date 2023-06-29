@@ -16,31 +16,10 @@ High Performance Scalable In-Memory Data Structure
 - WildCard-Search O(1).
 */
 
-using System;
-using System.Collections.Generic;
+namespace IoTHub.Database.InMemoryTrieAlgorithmDataBase;
 
 //Usable
-public class Record
-{
-    // Use a dictionary to store the dynamic fields of the record
-    public Dictionary<string, string> Fields { get; } = new Dictionary<string, string>();
-
-    // Add a method to check if the record contains a given term
-    public bool ContainsTerm(string term)
-    {
-        foreach (var field in Fields.Values)
-        {
-            if (field.Contains(term))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-}
-
-// Define a class to represent the in-memory data structure
-public class InMemoryTrieAlgorithmDataStructure
+public class InMemoryTrieAlgorithmDataBase
 {
     // Use a hash table to store the records
     private Dictionary<int, List<Record>> _records = new Dictionary<int, List<Record>>();
@@ -151,5 +130,24 @@ public class Trie
     {
         public Dictionary<char, TrieNode> Children { get; } = new Dictionary<char, TrieNode>();
         public List<Record> Records { get; } = new List<Record>();
+    }
+}
+
+public class Record
+{
+    // Use a dictionary to store the dynamic fields of the record
+    public Dictionary<string, string> Fields { get; } = new Dictionary<string, string>();
+
+    // Add a method to check if the record contains a given term
+    public bool ContainsTerm(string term)
+    {
+        foreach (var field in Fields.Values)
+        {
+            if (field.Contains(term))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

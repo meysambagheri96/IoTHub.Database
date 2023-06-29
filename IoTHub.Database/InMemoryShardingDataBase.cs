@@ -7,11 +7,13 @@ High Performance Scalable In-Memory Data Structure
 
 using System.Collections.Concurrent;
 
-public class InMemoryShardingDataStructure
+namespace IoTHub.Database.InMemoryShardingDataBase;
+
+public class InMemoryShardingDataBase
 {
     private List<Shard> shards;
 
-    public InMemoryShardingDataStructure(int numShards)
+    public InMemoryShardingDataBase(int numShards)
     {
         shards = Enumerable.Range(0, numShards).Select(i => new Shard()).ToList();
     }

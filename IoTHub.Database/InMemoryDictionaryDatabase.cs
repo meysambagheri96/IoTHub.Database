@@ -6,6 +6,8 @@ High Performance Scalable In-Memory Data Structure
 - WildCard-Search O(1).
 */
 
+namespace IoTHub.Database.InMemoryDictionaryDatabase;
+
 ///Usable
 public class InMemoryDictionaryDatabase
 {
