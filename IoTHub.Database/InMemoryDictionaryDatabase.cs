@@ -8,7 +8,7 @@ High Performance Scalable In-Memory Data Structure
 
 namespace IoTHub.Database.InMemoryDictionaryDatabase;
 
-///Usable
+///Failed
 public class InMemoryDictionaryDatabase
 {
     private Dictionary<string, HashSet<Dictionary<string, object>>> _index = new Dictionary<string, HashSet<Dictionary<string, object>>>();

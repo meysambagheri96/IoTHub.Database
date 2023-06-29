@@ -11,4 +11,9 @@
     <PackageReference Include="Lucene.Net.Core" Version="4.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="Benchmark\" />
+  </ItemGroup>
+
 </Project>

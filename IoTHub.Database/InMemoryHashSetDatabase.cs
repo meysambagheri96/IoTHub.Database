@@ -7,12 +7,13 @@ High Performance Scalable In-Memory Data Structure
 - WildCard-Search O(1).
 */
 
+using IoTHub.Database.Contracts;
 using System.Text;
 
 //Usable
 namespace IoTHub.Database.InMemoryHashSetDatabase;
 
-public class InMemoryHashSetDatabase
+public class InMemoryHashSetDatabase: IInMemoryDatabase
 {
     private Dictionary<object, HashSet<HashSet<object>>> _termIndex = new Dictionary<object, HashSet<HashSet<object>>>();
     private Dictionary<string, HashSet<HashSet<object>>> _wildcardIndex = new Dictionary<string, HashSet<HashSet<object>>>();
@@ -192,5 +193,20 @@ public class InMemoryHashSetDatabase
 
             return h;
         }
+    }
+
+    public void AddRecord(Dictionary<string, object> record)
+    {
+        throw new NotImplementedException();
+    }
+
+    public IEnumerable<Dictionary<string, object>> TermSearch(string fieldName, object value)
+    {
+        throw new NotImplementedException();
+    }
+
+    public IEnumerable<Dictionary<string, object>> WildcardSearch(string fieldName, object value)
+    {
+        throw new NotImplementedException();
     }
 }
