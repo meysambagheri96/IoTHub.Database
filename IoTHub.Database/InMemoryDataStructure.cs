@@ -1,8 +1,9 @@
-﻿/* Implement an High Performance Scalable In-Memory Data Structure in C#
-which contains Single Table with Dynamic fields. in this structure Queries
-should execute in milliseconds for billions of records, It should provide O(1) 
-for term search and O(1) for wild-card search.
+﻿/*
+High Performance Scalable In-Memory Data Structure 
+- Term-Search O(1) 
+- WildCard-Search O(1). 
 */
+
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
