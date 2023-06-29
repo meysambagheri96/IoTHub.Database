@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="InMemoryAnalyzerIndexerDatabase.cs" />
+    <PackageReference Include="Lucene.Net.Core" Version="4.9.0" />
   </ItemGroup>
 
 </Project>
