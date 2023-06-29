@@ -16,13 +16,15 @@ High Performance Scalable In-Memory Data Structure
 - WildCard-Search O(1).
 */
 
+using System.Collections.Concurrent;
+
 namespace IoTHub.Database.InMemoryTrieAlgorithmDataBase;
 
 //Usable
 public class InMemoryTrieAlgorithmDataBase
 {
     // Use a hash table to store the records
-    private Dictionary<int, List<Record>> _records = new Dictionary<int, List<Record>>();
+    private BlockingCollection<Record> _records = new BlockingCollection<Record>();
 
     // Use a trie data structure to index the records based on their terms
     private Trie _trie = new Trie();
@@ -34,11 +36,8 @@ public class InMemoryTrieAlgorithmDataBase
         foreach (var field in record.Fields)
         {
             int hashCode = field.Key.GetHashCode();
-            if (!_records.ContainsKey(hashCode))
-            {
-                _records[hashCode] = new List<Record>();
-            }
-            _records[hashCode].Add(record);
+
+            _records.Add(record);
         }
 
         // Add the record to the trie
@@ -53,17 +52,7 @@ public class InMemoryTrieAlgorithmDataBase
     {
         List<Record> result = new List<Record>();
         int hashCode = term.GetHashCode();
-        if (_records.ContainsKey(hashCode))
-        {
-            foreach (var record in _records[hashCode])
-            {
-                if (record.ContainsTerm(term))
-                {
-                    result.Add(record);
-                }
-            }
-        }
-        return result;
+        return _records.Where(a => a.ContainsTerm(term)).ToList();
     }
 
     // Add a method to search for records matching a wildcard pattern
@@ -135,6 +124,11 @@ public class Trie
 
 public class Record
 {
+    public Record(Dictionary<string, string> fields)
+    {
+        Fields = fields;
+    }
+
     // Use a dictionary to store the dynamic fields of the record
     public Dictionary<string, string> Fields { get; } = new Dictionary<string, string>();
 
