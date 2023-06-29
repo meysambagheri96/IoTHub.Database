@@ -1,18 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Lucene.Net.Core" Version="4.9.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Lucene.Net.Core" Version="4.9.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Benchmark\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Benchmark\" />
+	</ItemGroup>
 
 </Project>
